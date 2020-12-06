@@ -226,7 +226,6 @@ function main() {
 
 document.addEventListener('DOMContentLoaded', function () { 
     document.getElementById("addtask").addEventListener('click', clickHandler);
-    document.getElementById("cleartasks").addEventListener('click', clearChromeStorage);
     document.getElementById("deletetasks").addEventListener('click', tableToJSONandSync);
     document.getElementById("checkall").addEventListener('click', checkAll);
     main();

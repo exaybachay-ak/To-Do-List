@@ -3,7 +3,7 @@
   "version": "0.1",
   "manifest_version": 2,
   "description": "Quickly add tasks to a list and check them off as you complete them.",
-  "content_security_policy": "script-src 'self' 'sha256-9GOIUh3fbbxECeBkh5wfjwT+C++MTvJtW8bguQorlLY='; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'sha256-8vO0ohm8sm8SWfuu8qnM1tn4+Xx6BlfDkQoZ9X4kamI='; object-src 'self'",
   "permissions": [
     "storage",
     "activeTab"
