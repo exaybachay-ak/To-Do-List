@@ -1,0 +1,30 @@
+{
+  "name": "Tasks",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Quickly add tasks to a list and check them off as you complete them.",
+  "content_security_policy": "script-src 'self' 'sha256-9GOIUh3fbbxECeBkh5wfjwT+C++MTvJtW8bguQorlLY='; object-src 'self'",
+  "permissions": [
+    "storage",
+    "activeTab"
+],
+  "browser_action": {
+    "default_icon": "./images/icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery.js", "popup.js"]
+    }
+],
+
+  "icons": { "16": "./images/icon.png",
+           "48": "./images/icon.png",
+          "128": "./images/icon.png" },
+
+  "web_accessible_resources": [
+       "images/*"
+     ]
+}
