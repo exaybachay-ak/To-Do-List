@@ -69,31 +69,76 @@ label {
 <h1>To Do List</h1>
 
 
-<label for="task">Task</label>
-<input name="task" type="text" maxlength="1024" id="task">
+<label for="task">New Task</label>
+<input name="task" type="text" maxlength="1024" id="taskINPUT">
 <label for="due">Due Date</label>
-<input name="due" type="text" maxlength="1024" id="due">
+<input name="due" type="text" maxlength="1024" id="dueINPUT">
 <label for="pri">Priority</label>
-<input name="pri" type="text" maxlength="1024" id="pri" size="1">
+<input name="pri" type="text" maxlength="1024" id="priINPUT" size="1">
 <label for="dep">Dependencies</label>
-<input name="dep" type="text" maxlength="1024" id="dep">
-<br /><br />
-<button id="addtask">Add JSON Task</button>
+<input name="dep" type="text" maxlength="1024" id="depINPUT">
 <br />
-<button id="deletetasks">Delete Checked</button>
+<br />
 
-<br />
-<table id="taskdata" border="2" class="styled-table">
+<h1>Active Tasks</h1>
+<table id="taskdataTABLE" border="2" class="styled-table">
+	<tr>
+		<td style="text-align: center;"><button id="addtaskBUTTON">Add JSON Task</button></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><button id="movetotodaytopBUTTON">Move to Today</button></td>
+		<td><button id="completetasksBUTTON">Complete</button></td>
+		<td><button id="deletetasksBUTTON">Delete</button></td>
+	</tr>
 	<thead>
-		<th>Task</th>
+		<th style="text-align: center;">Task</th>
 		<th>Due Date</th>
 		<th>Priority</th>
 		<th>Dependencies</th>
-		<th id="deletecol"><input type="checkbox" id="checkall"></input></th>
+		<th id="todayTH" style="text-align: center;">
+			<input type="checkbox" id="todayHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+		<th id="completecoltopTH" style="text-align: center;">
+			<input type="checkbox" id="checkallcompletetopHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+		<th id="deletecoltopTH" style="text-align: center;">
+			<input type="checkbox" id="checkalldeletetopHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
 	</thead>
 	<tbody>
 	</tbody>
 </table>
+<br />
+
+<h1>Completed Tasks</h1>
+<table id="completedtasksTABLE" border="2" class="styled-table">
+	<tr>
+		<td id="addtaskbottomTD" style="text-align: center;"><button id="addtaskbottomBUTTON">Add JSON Task</button></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><button id="reactivatetasksbottomBUTTON">Reactivate</button></td>
+		<td><button id="deletetasksbottomBUTTON">Delete</button></td>
+	</tr>
+	<thead>
+		<th style="text-align: center;">Task</th>
+		<th>Due Date</th>
+		<th>Priority</th>
+		<th>Dependencies</th>
+		<th></th>
+		<th id="completecolbottomTH" style="text-align: center;">
+			<input type="checkbox" id="checkallcompletebottomHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+		<th id="deletecolbottomTH" style="text-align: center;">
+			<input type="checkbox" id="checkalldeletebottomHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+
 
 </body>
 </html>
