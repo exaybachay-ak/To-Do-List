@@ -12,6 +12,8 @@ https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
 <title>To Do List</title>
 <script src="popup.js"></script>
 <script src="jquery.js"></script>
+<script src="https://apis.google.com/js/api.js?onload=handleClientLoad"></script>
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 
 <style type="text/css">
 body {
@@ -19,6 +21,9 @@ body {
   max-width: 100%;
   position: relative;
   vertical-align: middle;
+}
+h1 {
+	margin-bottom: 0px; line-height: 0px;
 }
 label {
     vertical-align: top;
@@ -65,9 +70,9 @@ label {
 
 </head>
 
-<body width="600px">
-<h1>To Do List</h1>
-
+<body width="600px" height="950px">
+<h1 style="text-align: center;">To Do List</h1>
+<br />
 
 <label for="task">New Task</label>
 <input name="task" type="text" maxlength="1024" id="taskINPUT">
@@ -78,7 +83,39 @@ label {
 <label for="dep">Dependencies</label>
 <input name="dep" type="text" maxlength="1024" id="depINPUT">
 <br />
+
+
+<h1>Tasks For Today</h1>
+<table id="todayTABLE" border="2" class="styled-table">
+	<tr>
+		<td style="text-align: center;"><button id="addtasktodayBUTTON">Add JSON Task</button></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><button id="movetoactivetasksBUTTON">Move Back</button></td>
+		<td><button id="completetaskstodayBUTTON">Complete</button></td>
+		<td><button id="deletetaskstodayBUTTON">Delete</button></td>
+	</tr>
+	<thead>
+		<th style="text-align: center;">Task</th>
+		<th>Due Date</th>
+		<th>Priority</th>
+		<th>Dependencies</th>
+		<th id="todayTH" style="text-align: center;">
+			<input type="checkbox" id="todayHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+		<th id="completecoltoptodayTH" style="text-align: center;">
+			<input type="checkbox" id="checkallcompletetodayHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+		<th id="deletecoltoptodayTH" style="text-align: center;">
+			<input type="checkbox" id="checkalldeletetodayHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		</th>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
 <br />
+
 
 <h1>Active Tasks</h1>
 <table id="taskdataTABLE" border="2" class="styled-table">
@@ -96,8 +133,8 @@ label {
 		<th>Due Date</th>
 		<th>Priority</th>
 		<th>Dependencies</th>
-		<th id="todayTH" style="text-align: center;">
-			<input type="checkbox" id="todayHeaderCHECKBOX" class="headerCHECKBOX"></input>
+		<th id="activeTH" style="text-align: center;">
+			<input type="checkbox" id="activeHeaderCHECKBOX" class="headerCHECKBOX"></input>
 		</th>
 		<th id="completecoltopTH" style="text-align: center;">
 			<input type="checkbox" id="checkallcompletetopHeaderCHECKBOX" class="headerCHECKBOX"></input>
