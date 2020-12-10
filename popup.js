@@ -308,9 +308,13 @@ function getTasksFromTable(tbl){
             // last 3 elements are checkboxes nested in td
             else{
                 if(cell.id === "todayTD"){
-                    var today = rows[i].querySelector("#todayCHECKBOX").checked;
-                    console.log("today is: " + today);
-                    rowarray.push("today",today);
+                    if(tbl === "todayTABLE"){
+                        rowarray.push("today",true);
+                    } else{
+                        var today = rows[i].querySelector("#todayCHECKBOX").checked;
+                        console.log("today is: " + today);
+                        rowarray.push("today",today);
+                    }
                 }
 
                 else if(cell.id === "checkboxCompleteTD"){
@@ -461,7 +465,7 @@ function sortJSON(property) {
 
 function getChromeStorageAndPopulateTable() {
     chrome.storage.sync.get(null, function(items) {
-        items.data.sort(sortJSON("priority"));
+        items.data.sort(sortJSON("duedate"));
         let i = 0;
         for (var item of items.data ){
             // need to ensure items are not undefined to avoid populating deleted data
